@@ -15,6 +15,8 @@ import {
   Waves
 } from "lucide-react";
 
+const INSTALLER_URL = "https://github.com/similaitw/MediaHarbor/releases/download/v1.0.0/MediaHarborSetup.exe";
+
 const MODES = [
   { id: "single", label: "Gimy single", icon: FileVideo },
   { id: "batch", label: "Gimy batch", icon: Radio },
@@ -118,6 +120,10 @@ export default function Home() {
             <span />
             Vercel safe mode
           </div>
+          <a className="download-pill" href={INSTALLER_URL}>
+            <DownloadCloud size={17} />
+            Windows installer
+          </a>
         </div>
 
         <div className="mode-strip" role="tablist" aria-label="Download source">
