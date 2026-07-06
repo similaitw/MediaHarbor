@@ -14,6 +14,9 @@
   --blue: #76a8ff;
   --red: #ff6b61;
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+  --page-max: 1180px;
+  --content-pad: clamp(18px, 4vw, 42px);
+  --measure: 680px;
 }
 
 * {
@@ -65,7 +68,7 @@ a {
   align-content: space-between;
   min-height: 86svh;
   overflow: hidden;
-  padding: 24px clamp(18px, 4vw, 54px) 28px;
+  padding: 24px max(var(--content-pad), calc((100vw - var(--page-max)) / 2)) 28px;
   background: var(--ink);
   color: var(--paper);
 }
@@ -141,8 +144,8 @@ a {
 }
 
 .hero-copy {
-  max-width: 860px;
-  padding: 10svh 0 8svh;
+  max-width: 760px;
+  padding: 9svh 0 7svh;
 }
 
 .eyebrow {
@@ -166,20 +169,20 @@ p {
 }
 
 h1 {
-  max-width: 920px;
+  max-width: 760px;
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3rem, 9vw, 8rem);
+  font-size: clamp(2.85rem, 6.4vw, 5.9rem);
   font-weight: 500;
-  line-height: 0.9;
+  line-height: 0.96;
 }
 
 .lead {
-  max-width: 680px;
-  margin: 24px 0 0;
+  max-width: var(--measure);
+  margin: 22px 0 0;
   color: rgba(243, 239, 228, 0.82);
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
-  line-height: 1.72;
+  font-size: clamp(1.02rem, 1.5vw, 1.2rem);
+  line-height: 1.68;
 }
 
 .hero-actions,
@@ -269,7 +272,7 @@ h1 {
 }
 
 .section {
-  padding: clamp(72px, 10vw, 128px) clamp(18px, 5vw, 72px);
+  padding: clamp(62px, 8vw, 104px) max(var(--content-pad), calc((100vw - var(--page-max)) / 2));
 }
 
 .intro-band {
@@ -279,29 +282,29 @@ h1 {
 .section-heading,
 .workflow-copy,
 .console-heading {
-  max-width: 780px;
+  max-width: 720px;
 }
 
 h2 {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.1rem, 5vw, 5rem);
+  font-size: clamp(2rem, 4vw, 3.8rem);
   font-weight: 500;
-  line-height: 0.98;
+  line-height: 1.04;
 }
 
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
-  margin-top: clamp(36px, 6vw, 72px);
+  margin-top: clamp(32px, 5vw, 56px);
   background: var(--line-dark);
   border: 1px solid var(--line-dark);
 }
 
 .feature-card {
-  min-height: 260px;
-  padding: 26px;
+  min-height: 230px;
+  padding: 24px;
   background: #f8f3e6;
 }
 
@@ -311,8 +314,8 @@ h2 {
 
 .feature-card h3,
 .pipeline-step h3 {
-  margin: 26px 0 12px;
-  font-size: 1.12rem;
+  margin: 22px 0 10px;
+  font-size: 1.06rem;
 }
 
 .feature-card p,
@@ -327,7 +330,7 @@ h2 {
 .workflow-band {
   display: grid;
   grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
-  gap: clamp(28px, 6vw, 82px);
+  gap: clamp(28px, 5vw, 64px);
   background:
     linear-gradient(180deg, rgba(14, 38, 41, 0.94), rgba(8, 23, 27, 0.98)),
     var(--harbor);
@@ -345,17 +348,17 @@ h2 {
 
 .pipeline-step {
   display: grid;
-  grid-template-columns: 86px minmax(0, 0.5fr) minmax(0, 1fr);
+  grid-template-columns: 72px minmax(0, 0.48fr) minmax(0, 1fr);
   align-items: center;
-  gap: 18px;
+  gap: 16px;
   border-top: 1px solid rgba(243, 239, 228, 0.18);
-  padding: 22px 0;
+  padding: 20px 0;
 }
 
 .pipeline-step span {
   color: var(--signal);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.4rem;
+  font-size: 2rem;
 }
 
 .pipeline-step h3 {
@@ -368,7 +371,7 @@ h2 {
 }
 
 .console-section {
-  padding: clamp(72px, 10vw, 124px) clamp(18px, 5vw, 72px);
+  padding: clamp(62px, 8vw, 104px) max(var(--content-pad), calc((100vw - var(--page-max)) / 2));
   background:
     radial-gradient(circle at 10% 20%, rgba(59, 195, 169, 0.11), transparent 28%),
     linear-gradient(180deg, #081316, #0b1e23);
@@ -378,14 +381,16 @@ h2 {
 .console-heading p {
   margin-top: 18px;
   color: rgba(243, 239, 228, 0.68);
-  font-size: 1.05rem;
+  max-width: var(--measure);
+  font-size: 1rem;
 }
 
 .console-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.8fr);
   gap: 18px;
-  margin-top: 38px;
+  max-width: var(--page-max);
+  margin-top: 34px;
 }
 
 .control-surface,
@@ -639,7 +644,7 @@ code {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 28px;
   align-items: end;
-  padding: clamp(72px, 9vw, 116px) clamp(18px, 5vw, 72px);
+  padding: clamp(62px, 8vw, 96px) max(var(--content-pad), calc((100vw - var(--page-max)) / 2));
   background: var(--signal);
 }
 
@@ -664,7 +669,7 @@ code {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 14px;
-  padding: 22px clamp(18px, 5vw, 72px);
+  padding: 22px max(var(--content-pad), calc((100vw - var(--page-max)) / 2));
   background: var(--ink);
   color: rgba(243, 239, 228, 0.68);
 }
@@ -765,11 +770,11 @@ code {
 
 @media (max-width: 520px) {
   h1 {
-    font-size: 3rem;
+    font-size: 2.65rem;
   }
 
   h2 {
-    font-size: 2.28rem;
+    font-size: 2.05rem;
   }
 
   .feature-card {

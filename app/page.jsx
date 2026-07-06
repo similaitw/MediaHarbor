@@ -163,9 +163,9 @@ export default function Home() {
 
         <div className="hero-copy">
           <p className="eyebrow">Windows GUI · CLI · Vercel Console</p>
-          <h1>把零散影片來源收進同一座港口。</h1>
+          <h1>多來源影片下載，一次整理到位。</h1>
           <p className="lead">
-            MediaHarbor 將 Gimy、UB1818、YouTube 與 HLS segments 整理成一致的下載體驗；桌面版負責真正下載與合併，網頁版負責快速解析與任務規劃。
+            MediaHarbor 將 Gimy、UB1818、YouTube 與 HLS segments 整理成一致的操作流程。桌面版負責下載與合併，網頁版負責快速解析與任務規劃。
           </p>
           <div className="hero-actions">
             <a className="primary-link" href={INSTALLER_URL}>
@@ -198,7 +198,7 @@ export default function Home() {
       <section className="section intro-band" id="features">
         <div className="section-heading">
           <p className="eyebrow dark">軟體功能</p>
-          <h2>下載不是一顆按鈕，是一條可追蹤的航線。</h2>
+          <h2>從解析、下載到合併，都用同一套流程處理。</h2>
         </div>
         <div className="feature-grid">
           {FEATURES.map((feature) => {
@@ -233,7 +233,7 @@ export default function Home() {
       <section className="console-section" id="console">
         <div className="console-heading">
           <p className="eyebrow">Web Console</p>
-          <h2>先在線上解析，再決定要不要交給桌面版下載。</h2>
+          <h2>先在線上檢查來源，再交給桌面版下載。</h2>
           <p>
             Vercel 版適合做短任務檢查；YouTube、批次下載與 ffmpeg 合併這類長工作，仍由 Windows installer 內的桌面版處理。
           </p>
@@ -405,7 +405,7 @@ export default function Home() {
       <section className="download-section">
         <div>
           <p className="eyebrow dark">Installer</p>
-          <h2>桌面版才是真正的下載引擎。</h2>
+          <h2>桌面版負責完整下載與影音合併。</h2>
           <p>Windows installer 已包含必要執行檔與影音工具。安裝後用 GUI 或 CLI 下載、合併、批次處理。</p>
         </div>
         <div className="download-actions">
