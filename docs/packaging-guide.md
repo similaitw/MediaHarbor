@@ -2,16 +2,24 @@
 
 ## 目的
 
-此文件記錄 MediaHarbor 打包流程。本次執行不重新執行 PyInstaller、不執行 Inno Setup、不產生新的 exe 或 installer。
+此文件記錄 MediaHarbor 打包流程。v1.0.0 已產生 Windows installer 並上架到 GitHub Releases。
 
 ## 預期輸出
 
-改名完成後，預期產物：
+正式產物：
 
 ```text
 dist\MediaHarbor\MediaHarbor.exe
 installer-output\MediaHarborSetup.exe
 ```
+
+v1.0.0 Release asset：
+
+```text
+https://github.com/similaitw/MediaHarbor/releases/download/v1.0.0/MediaHarborSetup.exe
+```
+
+目前 v1.0.0 installer 大小為 `140,952,752` bytes，約 `134.42 MiB`。
 
 ## PyInstaller
 
@@ -51,8 +59,8 @@ python -m pip check
 python downloader.py --help
 ```
 
-## 本次不執行
+## 發布位置
 
-- 不重建 `dist/`。
-- 不重建 `installer-output/`。
-- 不更新安裝檔。
+- 不將 exe/installer 放入 Git repository。
+- Installer 放在 GitHub Releases。
+- Vercel Web Console 只連到 Release asset，不把 installer 放進部署包。

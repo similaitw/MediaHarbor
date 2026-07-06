@@ -2,6 +2,12 @@
 
 MediaHarbor Web Console 使用 Next.js App Router，可直接部署到 Vercel。
 
+Production URL：
+
+```text
+https://mediaharbor-pi.vercel.app
+```
+
 ## 本機驗證
 
 ```shell
@@ -37,8 +43,15 @@ npx next dev -H 127.0.0.1 -p 3001
 ## 目前 Web 版能力
 
 - 提供可操作的下載任務控制台。
+- 提供 Windows installer 下載按鈕，連到 GitHub Release asset。
 - Gimy single 可透過 `/api/resolve` 解析 `player_data` 與 stream URL。
 - YouTube、UB1818、Gimy batch、manual segments 會產生任務計畫與 CLI 指令。
+
+Installer URL：
+
+```text
+https://github.com/similaitw/MediaHarbor/releases/download/v1.0.0/MediaHarborSetup.exe
+```
 
 ## 為什麼不直接在 Vercel 下載影片
 
