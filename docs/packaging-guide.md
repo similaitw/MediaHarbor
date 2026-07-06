@@ -63,4 +63,4 @@ python downloader.py --help
 
 - 不將 exe/installer 放入 Git repository。
 - Installer 放在 GitHub Releases。
-- Vercel Web Console 只連到 Release asset，不把 installer 放進部署包。
+- Vercel 網站只連到 Release asset，不把 installer 放進部署包。

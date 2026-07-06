@@ -1,6 +1,6 @@
 # Vercel 部署指南
 
-MediaHarbor Web Console 使用 Next.js App Router，可直接部署到 Vercel。
+MediaHarbor 網站與 URL Checker 使用 Next.js App Router，可直接部署到 Vercel。
 
 Production URL：
 
@@ -40,7 +40,7 @@ npx next dev -H 127.0.0.1 -p 3001
 
 `vercel.json` 已設定 `/api/resolve` 的最大執行時間為 60 秒。
 
-## 目前 Web 版能力
+## 目前網站能力
 
 - 提供可操作的下載任務控制台。
 - 提供 Windows installer 下載按鈕，連到 GitHub Release asset。

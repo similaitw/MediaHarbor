@@ -2,7 +2,7 @@
 
 ## 目標
 
-MediaHarbor 是多網站影片下載工具，提供 CLI、GUI 與 Vercel Web Console。它的核心目標是讓使用者用一致的流程處理不同來源的影片，並在下載時看到清楚的狀態、速度與錯誤訊息。
+MediaHarbor 是多網站影片下載工具，主要提供 Windows GUI 與 CLI，並搭配網站 URL Checker 和 browser extension。它的核心目標是讓使用者用一致的流程處理不同來源的影片，並在下載時看到清楚的狀態、速度與錯誤訊息。
 
 ## 目標使用者
 
@@ -25,7 +25,7 @@ MediaHarbor 是多網站影片下載工具，提供 CLI、GUI 與 Vercel Web Con
 
 目前已上線：
 
-- Vercel Web Console：<https://mediaharbor-pi.vercel.app>
+- 網站與 URL Checker：<https://mediaharbor-pi.vercel.app>
 - Windows installer v1.0.0：<https://github.com/similaitw/MediaHarbor/releases/download/v1.0.0/MediaHarborSetup.exe>
 
 ## 限制
@@ -33,7 +33,7 @@ MediaHarbor 是多網站影片下載工具，提供 CLI、GUI 與 Vercel Web Con
 - 不處理需登入、cookies、年齡驗證或地區限制的網站流程。
 - 需登入、cookies、年齡驗證或地區限制的 YouTube 內容會直接顯示 yt-dlp 錯誤。
 - manual segments 目前以逐檔 log 為主，未做整體百分比。
-- Web Console 不直接執行長時間影片下載、ffmpeg 合併或大檔暫存；這些任務仍建議使用本機 GUI/CLI 或後續背景 worker。
+- URL Checker 不直接執行長時間影片下載、ffmpeg 合併或大檔暫存；這些任務仍建議使用本機 GUI/CLI。
 
 ## 參考來源
 

@@ -45,8 +45,8 @@ const FEATURES = [
     icon: Gauge
   },
   {
-    title: "Web 任務解析",
-    body: "Vercel 版負責解析與規劃任務，長時間下載交給桌面版或後續 worker。",
+    title: "瀏覽器快速送件",
+    body: "Chrome、Edge、Firefox 擴充功能可把目前分頁 URL 送進 MediaHarbor。",
     icon: Route
   },
   {
@@ -184,25 +184,25 @@ export default function Home() {
           </a>
           <div className="nav-links">
             <a href="#features">功能</a>
-            <a href="#console">Web Console</a>
+            <a href="#extension">Extension</a>
             <a href={RELEASE_URL}>Release</a>
           </div>
         </nav>
 
         <div className="hero-copy">
-          <p className="eyebrow">Windows GUI · CLI · Vercel Console</p>
+          <p className="eyebrow">Windows GUI · CLI · Browser Extension</p>
           <h1>多來源影片下載，一次整理到位。</h1>
           <p className="lead">
-            MediaHarbor 將 Gimy、UB1818、YouTube 與 HLS segments 整理成一致的操作流程。桌面版負責下載與合併，網頁版負責快速解析與任務規劃。
+            MediaHarbor 將 Gimy、UB1818、YouTube 與 HLS segments 整理成一致的操作流程。桌面版負責下載、進度監控與影音合併，瀏覽器擴充功能負責把目前分頁快速送進任務流程。
           </p>
           <div className="hero-actions">
             <a className="primary-link" href={INSTALLER_URL}>
               <DownloadCloud size={18} />
               Download for Windows
             </a>
-            <a className="ghost-link" href="#console">
-              <Terminal size={18} />
-              Open Web Console
+            <a className="ghost-link" href={EXTENSION_ZIP_URL}>
+              <MonitorDown size={18} />
+              Get Browser Extension
             </a>
           </div>
         </div>
@@ -260,10 +260,10 @@ export default function Home() {
 
       <section className="console-section" id="console">
         <div className="console-heading">
-          <p className="eyebrow">Web Console</p>
-          <h2>先在線上檢查來源，再交給桌面版下載。</h2>
+          <p className="eyebrow">URL Checker</p>
+          <h2>線上工具只做來源檢查，不取代桌面版。</h2>
           <p>
-            Vercel 版適合做短任務檢查；YouTube、批次下載與 ffmpeg 合併這類長工作，仍由 Windows installer 內的桌面版處理。
+            這個區塊用來快速檢查 URL 與產生 CLI 指令。YouTube、批次下載與 ffmpeg 合併仍由 Windows 桌面版處理。
           </p>
         </div>
 
@@ -297,7 +297,7 @@ export default function Home() {
               </div>
               <div>
                 <p>{activeMode?.label}</p>
-                <span>{mode === "single" ? "Gimy playback page can be resolved on Vercel." : "This mode is prepared for worker handoff."}</span>
+                <span>{mode === "single" ? "Gimy playback pages can be inspected here." : "This mode is prepared for desktop handoff."}</span>
               </div>
             </div>
 
@@ -396,8 +396,8 @@ export default function Home() {
                     <dd>{result.title}</dd>
                   </div>
                   <div>
-                    <dt>Vercel download</dt>
-                    <dd>{result.canDownloadOnVercel ? "Ready" : "Worker recommended"}</dd>
+                    <dt>Download path</dt>
+                    <dd>{result.canDownloadOnVercel ? "Ready" : "Use desktop app"}</dd>
                   </div>
                 </dl>
 
@@ -452,12 +452,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="extension-section">
+      <section className="extension-section" id="extension">
         <div className="extension-copy">
           <p className="eyebrow dark">Browser Extension</p>
           <h2>在 Chrome、Edge、Firefox 直接把目前分頁送進 MediaHarbor。</h2>
           <p>
-            MediaHarbor Launcher 會讀取目前分頁 URL、推測來源類型，並開啟 Web Console 或複製本機 CLI 指令。擴充功能不直接下載影片，下載仍交給桌面版。
+            MediaHarbor Launcher 會讀取目前分頁 URL、推測來源類型，並開啟 URL Checker 或複製本機 CLI 指令。擴充功能不直接下載影片，下載仍交給桌面版。
           </p>
         </div>
         <div className="install-steps">
@@ -477,7 +477,7 @@ export default function Home() {
         <span>Built for source inspection, desktop downloading, and tidy batch workflows.</span>
         <span className="footer-badge">
           <ShieldCheck size={15} />
-          Vercel + GitHub Releases
+          Desktop app + Browser extension
         </span>
       </footer>
     </main>

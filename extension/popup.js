@@ -63,7 +63,7 @@ openConsoleButton.addEventListener("click", async () => {
   }
 
   await extensionApi().tabs.create({ url: buildConsoleUrl() });
-  statusText.textContent = "Opened MediaHarbor Web Console.";
+    statusText.textContent = "Opened MediaHarbor URL Checker.";
 });
 
 copyCliButton.addEventListener("click", async () => {

@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "MediaHarbor Launcher",
   "version": "1.0.0",
-  "description": "Send the current tab URL to MediaHarbor Web Console and copy local CLI commands.",
+  "description": "Send the current tab URL to MediaHarbor URL Checker and copy local CLI commands.",
   "permissions": ["activeTab", "tabs", "clipboardWrite"],
   "action": {
     "default_title": "MediaHarbor",
