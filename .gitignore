@@ -4,6 +4,9 @@
 !requirements.txt
 installer-output/
 secrets/
+node_modules/
+.next/
+out/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
