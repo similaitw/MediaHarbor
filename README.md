@@ -1,51 +1,73 @@
-<div align="center">
-  
-<img src="https://fakeimg.pl/200x200?text=GD" width="128" height="128">
+# MediaHarbor
 
-<h1>GimyDownloader</h1>
+MediaHarbor 是一個多網站影片下載工具，目標是把不同來源的影片下載流程整理成一致的 CLI 與 GUI 體驗。專案目前由原本的 Gimy 下載器演進而來，後續會逐步整理為可維護的多來源架構。
 
-<h4>
-Download vids from Gimy<br>
-Made by programmer, made for programmer<br>
-</h4>
+> 本機資料夾目標名稱為 `H:\AI_Project\MediaHarbor`。目前工作區程序仍鎖定舊資料夾時，需在關閉相關程序後再從 `H:\AI_Project\GimyDownloader` 改名。
 
-![](https://img.shields.io/badge/Python-3-ffd343?logo=python)
-![](https://img.shields.io/badge/ffmpeg-5-378a38?logo=python)
+## 目前功能狀態
 
-<p align="center">
-  <a href="#preview">Preview</a> •
-  <a href="#requirement">Requirement</a> •
-  <a href="#usage">Usage</a>
-</p>
-</div>
+| 功能 | 狀態 | 備註 |
+| --- | --- | --- |
+| Gimy 單集下載 | 已有 | CLI 命令保留為 `gimy`，代表來源名稱。 |
+| Gimy 多集批次下載 | 已有 | CLI 命令為 `batch`。 |
+| UB1818 下載 | 已有 | 支援 `play.html?video_id=...`。 |
+| 手動 HLS 分段下載 | 已有 | CLI 命令為 `segments`。 |
+| GUI | 已有 | 已改名為 MediaHarbor，並加入 YouTube 與進度資訊。 |
+| YouTube 下載 | 已有 | 支援單片與 playlist。 |
+| 下載進度 UI | 已有 | GUI 顯示目前檔案、百分比、速度、ETA。 |
+| Windows 安裝檔 | 已有舊版流程 | 本次不重新打包。 |
 
-## Preview
+## 快速開始
 
-![](uploads/Screenshot.png)
-
-## Requirement
-
-- Python 3.8 and above
-- ffmpeg 5 and above
-
-## Usage
-
-### Step 1 - Download
-
-Prepared? on command line run:
+安裝依賴：
 
 ```shell
-python downloader.py
+python -m pip install -r requirements.txt
 ```
 
-### Step 2 - Concatenate files
+啟動 GUI：
 
-Refer: [Concatenating media files](https://trac.ffmpeg.org/wiki/Concatenate)
-
-Navigate to episode folder and run:
-
-```
-ffmpeg -f concat -i filelist.txt -c copy output.ts
+```shell
+python gui.py
 ```
 
-### Step 3 - Enjoy
+使用 CLI：
+
+```shell
+python downloader.py gimy "https://gimy01.com/..."
+python downloader.py batch "https://gimy01.com/..." --from 1 --to 12
+python downloader.py ub1818 "https://ub1818.com/play.html?video_id=59748"
+python downloader.py youtube "https://www.youtube.com/watch?v=..."
+python downloader.py youtube "https://www.youtube.com/playlist?list=..."
+python downloader.py segments "https://example.com/path/video" --begin 0 --end 120 --merge output.ts
+```
+
+YouTube 下載預設使用最佳 mp4，並在 playlist 模式用集數序號避免檔名覆蓋：
+
+```shell
+python downloader.py youtube "https://www.youtube.com/watch?v=..." --title "my-video"
+python downloader.py youtube "https://www.youtube.com/playlist?list=..." -o downloads
+```
+
+## 文件導覽
+
+- [專案總覽](docs/project-overview.md)
+- [使用者指南](docs/user-guide.md)
+- [開發指南](docs/development-guide.md)
+- [打包指南](docs/packaging-guide.md)
+- [參考來源](docs/references.md)
+- [開發規格入口](specs/index.md)
+
+## 參考來源
+
+- 目前 repo remote：<https://github.com/MrNegativeTW/GimyDownloader>
+- 使用者提供的參考專案：<https://github.com/jcwlin/GimyYoutubeDownloader>
+
+本專案會在文件中保留上述來源 attribution。MediaHarbor 的目標不是維持單一 Gimy 下載器，而是將既有實作整理成多網站支援工具。
+
+## 開發原則
+
+- 專案名稱統一使用 `MediaHarbor`。
+- `gimy`、`ub1818`、`youtube` 是來源名稱，可以保留在 CLI 與規格中。
+- 已完成：文件、改名設定、YouTube、下載進度、GUI 整合。
+- 本次不重新打包 exe/installer。
