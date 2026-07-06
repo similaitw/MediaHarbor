@@ -648,6 +648,46 @@ code {
   background: var(--signal);
 }
 
+.extension-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.85fr);
+  gap: 28px;
+  padding: clamp(62px, 8vw, 96px) max(var(--content-pad), calc((100vw - var(--page-max)) / 2));
+  background: var(--paper);
+}
+
+.extension-copy {
+  max-width: 660px;
+}
+
+.extension-copy p {
+  margin: 18px 0 0;
+  color: #536260;
+  line-height: 1.7;
+}
+
+.install-steps {
+  display: grid;
+  gap: 12px;
+}
+
+.install-steps article {
+  border: 1px solid var(--line-dark);
+  background: #f8f3e6;
+  padding: 22px;
+}
+
+.install-steps span {
+  color: var(--copper);
+  font-weight: 850;
+}
+
+.install-steps p {
+  margin: 10px 0 0;
+  color: #536260;
+  line-height: 1.65;
+}
+
 .download-section h2 {
   max-width: 700px;
 }
@@ -692,7 +732,8 @@ code {
 
   .workflow-band,
   .console-layout,
-  .download-section {
+  .download-section,
+  .extension-section {
     grid-template-columns: 1fr;
   }
 

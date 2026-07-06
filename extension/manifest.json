@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "MediaHarbor Launcher",
+  "version": "1.0.0",
+  "description": "Send the current tab URL to MediaHarbor Web Console and copy local CLI commands.",
+  "permissions": ["activeTab", "tabs", "clipboardWrite"],
+  "action": {
+    "default_title": "MediaHarbor",
+    "default_popup": "popup.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "mediaharbor-launcher@similaitw.github.io",
+      "strict_min_version": "109.0"
+    }
+  }
+}

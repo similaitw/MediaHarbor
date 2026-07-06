@@ -45,6 +45,12 @@ npm run build
 
 部署說明見：[Vercel 部署指南](docs/vercel-deployment.md)
 
+Browser extension 可將目前分頁 URL 送到 Web Console：
+
+```text
+https://github.com/similaitw/MediaHarbor/releases/download/v1.0.0/mediaharbor-launcher.zip
+```
+
 ### 本機 Python 版本
 
 安裝依賴：
@@ -84,6 +90,7 @@ python downloader.py youtube "https://www.youtube.com/playlist?list=..." -o down
 - [開發指南](docs/development-guide.md)
 - [打包指南](docs/packaging-guide.md)
 - [Vercel 部署指南](docs/vercel-deployment.md)
+- [Browser Extension 安裝指南](docs/browser-extension.md)
 - [參考來源](docs/references.md)
 - [開發規格入口](specs/index.md)
 

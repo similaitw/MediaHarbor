@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MediaHarbor Launcher</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header>
+        <span class="mark">MH</span>
+        <div>
+          <h1>MediaHarbor</h1>
+          <p>Send this page to Web Console</p>
+        </div>
+      </header>
+
+      <label class="field">
+        <span>Detected URL</span>
+        <textarea id="urlInput" rows="3" spellcheck="false"></textarea>
+      </label>
+
+      <label class="field">
+        <span>Source mode</span>
+        <select id="modeSelect">
+          <option value="single">Gimy single</option>
+          <option value="batch">Gimy batch</option>
+          <option value="ub1818">UB1818</option>
+          <option value="youtube">YouTube</option>
+          <option value="segments">Segments</option>
+        </select>
+      </label>
+
+      <div class="actions">
+        <button id="openConsole" class="primary" type="button">Open Web Console</button>
+        <button id="copyCli" type="button">Copy CLI</button>
+      </div>
+
+      <p id="status" class="status">Ready</p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Anchor,
   ArrowRight,
@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 
 const INSTALLER_URL = "https://github.com/similaitw/MediaHarbor/releases/download/v1.0.0/MediaHarborSetup.exe";
+const EXTENSION_ZIP_URL = "https://github.com/similaitw/MediaHarbor/releases/download/v1.0.0/mediaharbor-launcher.zip";
 const RELEASE_URL = "https://github.com/similaitw/MediaHarbor/releases/tag/v1.0.0";
 
 const MODES = [
@@ -69,6 +70,20 @@ const SAMPLE_URLS = {
   segments: "https://example.com/path/video"
 };
 
+function inferModeFromUrl(rawUrl) {
+  const urlText = String(rawUrl || "").toLowerCase();
+  if (urlText.includes("youtube.com") || urlText.includes("youtu.be")) {
+    return "youtube";
+  }
+  if (urlText.includes("ub1818.com")) {
+    return "ub1818";
+  }
+  if (urlText.includes(".ts") || urlText.includes(".m3u8")) {
+    return "segments";
+  }
+  return "single";
+}
+
 export default function Home() {
   const [mode, setMode] = useState("single");
   const [url, setUrl] = useState("");
@@ -85,6 +100,19 @@ export default function Home() {
 
   const activeMode = useMemo(() => MODES.find((item) => item.id === mode), [mode]);
   const ActiveIcon = activeMode?.icon || FileVideo;
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const initialUrl = params.get("url");
+    const initialMode = params.get("mode");
+
+    if (initialUrl) {
+      setUrl(initialUrl);
+      setMode(MODES.some((item) => item.id === initialMode) ? initialMode : inferModeFromUrl(initialUrl));
+    } else if (MODES.some((item) => item.id === initialMode)) {
+      setMode(initialMode);
+    }
+  }, []);
 
   async function resolveSource(event) {
     event.preventDefault();
@@ -413,10 +441,34 @@ export default function Home() {
             <DownloadCloud size={18} />
             Download MediaHarborSetup.exe
           </a>
+          <a className="ghost-link dark" href={EXTENSION_ZIP_URL}>
+            <MonitorDown size={18} />
+            Browser extension
+          </a>
           <a className="ghost-link dark" href={RELEASE_URL}>
             <Github size={18} />
             View GitHub Release
           </a>
+        </div>
+      </section>
+
+      <section className="extension-section">
+        <div className="extension-copy">
+          <p className="eyebrow dark">Browser Extension</p>
+          <h2>在 Chrome、Edge、Firefox 直接把目前分頁送進 MediaHarbor。</h2>
+          <p>
+            MediaHarbor Launcher 會讀取目前分頁 URL、推測來源類型，並開啟 Web Console 或複製本機 CLI 指令。擴充功能不直接下載影片，下載仍交給桌面版。
+          </p>
+        </div>
+        <div className="install-steps">
+          <article>
+            <span>Chrome / Edge</span>
+            <p>開啟 extensions 頁面，啟用 Developer mode，選擇 Load unpacked，載入專案的 extension 資料夾。</p>
+          </article>
+          <article>
+            <span>Firefox</span>
+            <p>開啟 about:debugging，選擇 This Firefox，Load Temporary Add-on，載入 extension/manifest.json。</p>
+          </article>
         </div>
       </section>
 

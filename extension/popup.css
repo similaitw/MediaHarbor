@@ -1,0 +1,114 @@
+:root {
+  color-scheme: dark;
+  --ink: #071012;
+  --panel: #10262a;
+  --line: rgba(232, 226, 207, 0.18);
+  --paper: #f3efe4;
+  --muted: rgba(243, 239, 228, 0.62);
+  --signal: #f4b84a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 360px;
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.popup-shell {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  background:
+    linear-gradient(135deg, rgba(244, 184, 74, 0.12), transparent 42%),
+    var(--ink);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--signal);
+  color: var(--signal);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.1rem;
+}
+
+header p,
+.field span,
+.status {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: rgba(16, 38, 42, 0.9);
+  color: var(--paper);
+  padding: 10px;
+  font: inherit;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+textarea:focus,
+select:focus {
+  border-color: var(--signal);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 104px;
+  gap: 8px;
+}
+
+button {
+  min-height: 40px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--paper);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button.primary {
+  border-color: var(--signal);
+  background: var(--signal);
+  color: var(--ink);
+}
+
+.status {
+  min-height: 18px;
+}
