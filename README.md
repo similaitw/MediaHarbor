@@ -60,7 +60,7 @@ python downloader.py youtube "https://www.youtube.com/playlist?list=..." -o down
 
 ## 參考來源
 
-- 目前 repo remote：<https://github.com/MrNegativeTW/GimyDownloader>
+- 目前 repo remote：<https://github.com/similaitw/MediaHarbor>
 - 使用者提供的參考專案：<https://github.com/jcwlin/GimyYoutubeDownloader>
 
 本專案會在文件中保留上述來源 attribution。MediaHarbor 的目標不是維持單一 Gimy 下載器，而是將既有實作整理成多網站支援工具。

@@ -3,13 +3,13 @@
 ## 目前 repo remote
 
 ```text
-https://github.com/MrNegativeTW/GimyDownloader
+https://github.com/similaitw/MediaHarbor
 ```
 
-此 remote 是目前工作區的 GitHub 來源。專案已決定改名為 `MediaHarbor`，但本次文件任務不更動 remote。若後續 GitHub repo 也要改名，建議改為：
+此 remote 是目前工作區的 GitHub 來源。專案已改名並上線為 `MediaHarbor`。原始來源保留為 upstream 參考：
 
 ```text
-https://github.com/MrNegativeTW/MediaHarbor
+https://github.com/MrNegativeTW/GimyDownloader
 ```
 
 ## 使用者提供的參考專案

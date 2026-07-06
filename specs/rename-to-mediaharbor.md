@@ -26,7 +26,7 @@
 - 將 Inno Setup script 改名為 `installer\MediaHarbor.iss`。
 - 將 installer AppName、DefaultDirName、OutputBaseFilename 改為 MediaHarbor。
 - 本機資料夾從 `H:\AI_Project\GimyDownloader` 改為 `H:\AI_Project\MediaHarbor`。
-- Git remote 暫不自動更動；若 GitHub repo 改名，建議更新 remote 到 `https://github.com/MrNegativeTW/MediaHarbor`。
+- Git remote 已更新：`origin` 指向 `https://github.com/similaitw/MediaHarbor`，原 `GimyDownloader` remote 保留為 `upstream`。
 
 ## 邊界情境與錯誤處理
 
