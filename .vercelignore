@@ -1,0 +1,13 @@
+node_modules
+.next
+.vercel
+dist
+build
+downloads
+installer-output
+secrets
+__pycache__
+*.pyc
+*.pyo
+*.spec
+!MediaHarbor.spec
